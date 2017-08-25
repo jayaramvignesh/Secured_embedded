@@ -1,0 +1,31 @@
+<html>
+ <head>
+	 <title> BLOCK PAGE </title>
+	 <meta name = "viewport" content = "width=device-width , initial-scale=1.0 ">
+	 <link rel="stylesheet" href="/static/style1.css" type="text/css">
+ </head>
+ 
+  <style>
+ body{
+	 padding-top:50px;
+	 font-family:"cursive", Calfish, cursive;
+	 color:#be7657;
+	 background: url(/static/images/sorry.jpg);
+ }
+ </style> 
+ 
+ <body>
+	<div class = "center">
+	 <h1> &emsp;&emsp;&emsp;WELCOME ATTACKER </h1>
+	 <div class="container">
+	 
+	 {% if bodyText%}
+
+	 	{{bodyText}}
+	 
+	{% endif %}
+	 <br>
+	 </div>
+ </body>
+</html>
+

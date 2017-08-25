@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/static/style_login.css" type="text/css">
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+ 
+ <style>
+ body{
+	 padding-top:50px;
+	 font-family:"cursive", Calfish, cursive;
+	 color:#be7657;
+	 background: url(/static/images/login.jpg);
+ }
+ </style> 
+ 
+<form action="/login" method="POST">
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Login</h1>
+			</div>
+ 
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="username" name="username">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+ 
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="password" name="password">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+		<p> Click <a href ="/register" >here</a> for new user</p> 
+                <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block" >
+			    <br>
+			</div>
+		</div>
+	</div>
+</form>
+
+  {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+  {% endif %}
+
+
+
+{% endif %}
+{% endblock %}

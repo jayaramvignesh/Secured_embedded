@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/static/style_register.css" type="text/css">
+{% block body %}
+  
+ <style> 
+  body{
+	 padding-top:50px;
+	 font-family:"cursive", Calfish, cursive;
+	 color:#be7657;
+	 background: url(/static/images/register.jpg);
+ }
+ </style>
+<form action="/register" method="POST">
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Register</h1>
+			</div>
+ 
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="email_id" name="email_id">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+ 
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="username" name="username">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+ 
+ 
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="password" name="password">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+ 
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="password" name="re_enter_password">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+				<p> Click <a href ="/">here</a> to go back</p> 	
+                <input type="submit" value="Register" class="btn btn-primary btn-large btn-block" >
+			    <br>
+			</div>
+		</div>
+	</div>
+</form>
+
+  {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+  {% endif %}
+
+{% endblock %}

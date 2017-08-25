@@ -1,0 +1,54 @@
+<html>
+ <head>
+	 <meta name = "viewport" content = "width=device-width , initial-scale=1.0 ">
+	 <link rel="stylesheet" href="/static/style2.css" type="text/css">
+<script>
+ <!--
+ function
+ timedRefresh(timeoutPeriod) {
+	 setTimeout("location.reload(true);",timeoutPeriod);
+ }
+window.onload=timedRefresh(5000);
+</script>
+ </head>
+{% if session.get('logged_in') %}
+ <body>
+	<div class = "center">
+	 <h1> &emsp;&emsp;&emsp;WELCOME USER</h1>
+	<table border = 1 align = "center">
+         <thead>
+            <td>user</td>
+            <td>sensor_name</td>
+	    <td>sensor_data</td>
+	    <td>upper_limit</td>
+	    <td>lower_limit</td>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row[0]}}</td>
+               <td>{{row[1]}}</td>
+	       <td>{{row[2]}}</td>
+	       <td>{{row[3]}}</td>
+	       <td>{{row[4]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+      
+	 <div class="container">
+	 
+	 {% if bodyText%}
+
+	 	{{bodyText}}
+	 
+	{% endif %}
+	 <br>
+	 <p>Click <a href="/data_graphical">here</a> to VIEW GRAPHICAL DATA</p>
+	 <p>Click <a href="/delete">here</a> to DELETE ACCOUNT</p>
+	 <p>Click <a href="/logout">here</a> to LOGOUT</p> 
+	 </div>
+ </body>
+ 
+{% endif %}
+</html>
+

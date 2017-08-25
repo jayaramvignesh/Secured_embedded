@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/static/style_userchoice.css" type="text/css">
+{% block body %}
+
+ <style>
+ body{
+	 padding-top:50px;
+	 font-family:"cursive", Times New Roman, cursive;
+	 color:#3498DB;
+	 background: url(/static/images/userchoice.jpg);
+ }
+ </style> 
+
+
+{% if session['logged_in'] %}
+
+<form action="/user_choice" method="POST">
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>WELCOME USER</h1>
+			</div>
+		<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="username" name="username">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+ 			<p> Click <a href ="/sensor_limit" >here</a> to set sensor limits</p>
+        		<p> Click <a href ="/new_sensor" >here</a> to register a new sensor</p>
+			<input type="submit" name ="VIEW SENSOR DATA" value="VIEW SENSOR DATA" class="btn btn-primary btn-large btn-block" >
+		
+			    <br>
+			</div>
+		</div>
+	</div>
+</form>
+
+ {% if bodyText%}
+
+ 	{{bodyText}}
+
+ {% endif %}
+	
+  {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+  {% endif %}
+
+
+
+{% endif %}
+
+{% endblock %}
